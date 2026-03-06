@@ -1,0 +1,178 @@
+% ---- Adapted ETD Document Class and Useful Packages ---- %
+% ---- Formerly University of Chicago document ---- %
+
+%%%% Optimized for University of Nebraska at Kearney %%%%
+
+% run with xelatex
+% necessary for Cherokee language support
+%!TEX program = xelatex
+
+\documentclass[authoryear,biblatex]{unketd}
+\usepackage[titletoc]{appendix}
+\usepackage{subfigure,epsfig,amsfonts}
+% natbib incompatible with biber!!
+% \usepackage{natbib} %(from template)
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% CHANGE TO SANS SERIF
+% FONT STYLING
+%\usepackage{fontspec}
+%\setmainfont[
+%	Path = ./Roboto/,
+%	UprightFont = Roboto-Regular.ttf,
+%	BoldFont    = Roboto-Bold.ttf,
+%	ItalicFont  = Roboto-Italic.ttf,
+%	BoldItalicFont = Roboto-BoldItalic.ttf
+%	]{Noto Sans}
+
+
+% dummy test
+\usepackage{lipsum}
+
+%% THESE ARE PACKAGES NATALIA PILAND ADDED
+% modified for xetex
+\usepackage{subfiles}
+\usepackage{graphicx}
+\usepackage{booktabs}
+% add svgnames
+\usepackage[svgnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{fancyref}
+
+% Cherokee language support from Jacob C. Cooper %
+% Can be adapted for other languages too, such as Chinese
+% requires xelatex engine above
+
+%%%% FOREIGN LANGUAGE SUPPORT %%%%
+
+\usepackage{fontspec-xetex}
+% \newfontfamily{\cherokeefam}{Plantagenet Cherokee}
+% \DeclareTextFontCommand{\cwy}{\cherokeefam}
+
+% \newfontfamily{\osage}{Noto Sans Osage}
+%\DeclareTextFontCommand{\osage}{\osagefam}
+
+% OTHER PACKAGES FROM JACOB C. COOPER
+% help with numbers in tables etc.
+\usepackage{siunitx}
+
+\sisetup{round-mode=places, %round off numbers
+round-precision=2} % round to two places
+
+% long tables that can rotate on the page
+
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{caption}
+
+% add pdf pages into document
+%\usepackage{pdfpages}
+
+% set to add R code
+\usepackage{listings}
+\lstset{language=R,
+	basicstyle=\small\ttfamily,
+	stringstyle=\color{DarkGreen},
+	otherkeywords={0,1,2,3,4,5,6,7,8,9},
+	morekeywords={TRUE,FALSE,T,F},
+	keywordstyle=\color{blue},
+	commentstyle=\color{DarkGreen}}
+
+%%% other packages from Natalia and others
+
+% set graphics path IF NEEDED
+%\graphicspath{{/home/directory/}} % Change the path
+
+% packages for references
+% here, numeric references
+\usepackage[backend=biber, 
+			%%%% use below line for numeric citations %%%%
+%			style=numeric-comp, % style compresses, orders in text citations
+			style=authoryear-comp, % author year citation style
+			sorting=nyt, % within bibliography by name, year, then title
+			maxbibnames=99]{biblatex} % prints up to 99 names in bibliography
+\addbibresource{references.bib}
+
+%% Use these commands to set biographic information for the title page:
+\title{TITLE OF YOUR THESIS}
+\author{YOUR NAME}
+\department{Your department}
+\division{Your College}
+\degree{Your Degree}
+\date{Month Year}
+
+%% Use these commands to set a dedication and epigraph text
+\dedication{
+	To those who inspired you. 
+}
+
+\epigraph{
+	``Inspirational quote. Note the formatting of the quotes in the \LaTeX document.''  \newline - \textit{Person who wrote the example}
+}
+
+% DO THESE PACKAGES LAST
+% replace URL with hyperref
+\usepackage[xetex]{hyperref}
+\hypersetup{colorlinks=true, % make links different color
+	pdfcreator={Jacob C. Cooper}, % document creator
+	linkcolor=black, % links within document "hidden"
+	citecolor=blue, % links to citations blue
+	urlcolor=blue} % links to web pages blue
+
+\begin{document}
+	%% Basic setup commands
+	% If you don't want a title page comment out the next line and uncomment the line after it:
+	\maketitle
+	%\omittitle
+	
+	%%% ACCEPTANCE PAGE %%%
+	
+	% These lines can be commented out to disable the copyright/dedication/epigraph pages
+	\makecopyright
+	\makededication
+	\makeepigraph
+	
+	\abstract
+	
+	Check the source document to see how to format for different things like \textbf{bold} and \textit{italic}. \LaTeX can be complicated, but it can make really nice documents and make a lot of the complicated things easier for you.
+	\ \\
+	Please pay special attention to the formatting of references and appendices in this document. If you do not follow these to the letter, the document may not reference or compile correctly.
+	
+	\acknowledgments
+	% Enter Acknowledgements here
+	
+	\lipsum[1]
+
+	%% Make the various tables of contents
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	
+	\mainmatter
+	% Main body of text follows
+	% Presently set to read different subfiles
+	\subfile{chp1} % example chapter
+	\subfile{conclusion}
+	
+	% Source - https://tex.stackexchange.com/a/338437
+	% Posted by Laurent Jacques, modified by community. See post 'Timeline' for change history
+	% Retrieved 2026-03-05, License - CC BY-SA 3.0
+	
+	% \renewcommand{\theHsection}{A\arabic{section}}
+	
+	\begin{appendices}
+		\subfile{chp1_appendix}
+	\end{appendices}
+	
+	\printbibliography[heading=bibintoc,title={References}]
+	
+	% Figures and tables, if you decide to leave them to the end
+	%\input{figure}
+	%\input{table}
+	
+\end{document}

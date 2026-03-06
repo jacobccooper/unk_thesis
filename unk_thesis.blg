@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'unk_thesis.blg'
+[62] biber-darwin:340> INFO - === Thu Mar  5, 2026, 19:12:35
+[76] Biber.pm:419> INFO - Reading 'unk_thesis.bcf'
+[145] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
+[158] Biber.pm:4419> INFO - Processing section 0
+[168] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
+[170] bibtex.pm:1713> INFO - LaTeX decoding ...
+[178] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[249] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[250] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[250] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[250] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[254] bbl.pm:660> INFO - Writing 'unk_thesis.bbl' with encoding 'UTF-8'
+[258] bbl.pm:763> INFO - Output to unk_thesis.bbl
