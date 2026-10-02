@@ -1,7 +1,7 @@
 # unk_thesis
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-LaTeX documents for formatting a [University of Nebraska at Kearney](https://www.unk.edu/) thesis. These documents are adapted from an earlier version of the University of Chicago dissertationlatex template, available [here](https://www.overleaf.com/latex/templates/university-of-chicago-phd-dissertation-template/syvxgkqhvqqt). This template is also CC BY 4.0.
+LaTeX documents for formatting a [University of Nebraska at Kearney](https://www.unk.edu/) thesis. These documents are adapted from an earlier version of the University of Chicago dissertation latex template, available [here](https://www.overleaf.com/latex/templates/university-of-chicago-phd-dissertation-template/syvxgkqhvqqt). This template is also CC BY 4.0.
 
 Documents include several alterations made by [Natalia Piland](https://github.com/natiop) and also made by myself during the process of my PhD and during the adaptation for UNK.
 
